@@ -38,6 +38,25 @@ class BlocExample extends StatelessWidget {
               },
             ),
             // quando queremos somente parte do estado
+            BlocSelector<ExampleBloc, ExampleState, bool>(
+              selector: (state) {
+                print('Estado alterado para ${state.runtimeType}');
+                if (state is ExampleStateInitial) {
+                  return true;
+                }
+                return false;
+              },
+              builder: (context, showLoader) {
+                if (showLoader) {
+                  return const Expanded(
+                    child: Center(
+                      child: CircularProgressIndicator(),
+                    ),
+                  );
+                }
+                return const SizedBox.shrink();
+              },
+            ),
 
             // queremos somente rebuildar
             BlocBuilder<ExampleBloc, ExampleState>(
