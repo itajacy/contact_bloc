@@ -1,5 +1,6 @@
 // ignore_for_file: public_member_api_docs, sort_constructors_first
-import 'package:flutter/foundation.dart';
+
+part of 'example_bloc.dart';
 
 @immutable
 abstract class ExampleState {}
@@ -7,8 +8,8 @@ abstract class ExampleState {}
 class ExampleStateInitial extends ExampleState {}
 
 class ExampleStateData extends ExampleState {
-  final List<String> name;
+  final List<String> names;
   ExampleStateData({
-    required this.name,
+    required this.names,
   });
 }

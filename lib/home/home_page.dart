@@ -9,22 +9,65 @@ class HomePage extends StatelessWidget {
       appBar: AppBar(
         title: const Text('Home Page'),
       ),
-      body: Column(
+      body:
+          // SingleChildScrollView(
+          //   child: Padding(
+          //     padding: EdgeInsets.all(8.0),
+          //     child: Wrap(
+          //       children: [
+          //         _ButtonCard(
+          //           onTap: () {
+          //             Navigator.of(context).pushNamed('/bloc/example');
+          //           },
+          //           label: 'Example',
+          //         ),
+          //         _ButtonCard(
+          //           onTap: () {
+          //             Navigator.of(context).pushNamed('/bloc/example/freezed');
+          //           },
+          //           label: 'Example',
+          //         ),
+          //       ],
+          //     ),
+          //   ),
+          // ),
+
+          Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
-              Text("BOTAO 1"),
-              Text("BOTAO 2"),
+              TextButton(
+                onPressed: () {
+                  Navigator.of(context).pushNamed('/bloc/example');
+                },
+                child: const Text('Example'),
+              ),
+              TextButton(
+                onPressed: () {
+                  Navigator.of(context).pushNamed('***********');
+                },
+                child: const Text('Example Freezed'),
+              ),
             ],
           ),
           SizedBox(height: 20),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
             children: [
-              Text("BOTAO 3"),
-              Text("BOTAO 4"),
+              TextButton(
+                onPressed: () {
+                  Navigator.of(context).pushNamed('************');
+                },
+                child: const Text('Contact'),
+              ),
+              TextButton(
+                onPressed: () {
+                  Navigator.of(context).pushNamed('************');
+                },
+                child: const Text('Contact Cubit'),
+              ),
             ],
           ),
         ],
