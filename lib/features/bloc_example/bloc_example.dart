@@ -12,6 +12,7 @@ class BlocExample extends StatelessWidget {
         title: const Text('Bloc Example'),
       ),
       // criando um "listener"
+      // ouve somente o estado
       body: BlocListener<ExampleBloc, ExampleState>(
         listener: (context, state) {
           if (state is ExampleStateData) {
@@ -24,6 +25,21 @@ class BlocExample extends StatelessWidget {
         },
         child: Column(
           children: [
+            // Ouve e retorna o estado
+            BlocConsumer<ExampleBloc, ExampleState>(
+              listener: (context, state) {
+                print('Estado alterado para ${state.runtimeType}');
+              },
+              builder: (context2, state) {
+                if (state is ExampleStateData) {
+                  return Text('Total de nomes é ${state.names.length}');
+                }
+                return const SizedBox.shrink();
+              },
+            ),
+            // quando queremos somente parte do estado
+
+            // queremos somente rebuildar
             BlocBuilder<ExampleBloc, ExampleState>(
               builder: (context, state) {
                 if (state is ExampleStateData) {
