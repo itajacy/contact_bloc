@@ -14,6 +14,16 @@ class BlocExample extends StatelessWidget {
       // criando um "listener"
       // ouve somente o estado
       body: BlocListener<ExampleBloc, ExampleState>(
+        listenWhen: (previous, current) {
+          if (previous is ExampleStateInitial && current is ExampleStateData) {
+            if (current.names.length > 3) {
+              return true;
+            }
+          }
+          return false;
+          // return current is ExampleStateData;
+        },
+        //!  O listener só será executando quando a condição do listnWhen for satisfeita
         listener: (context, state) {
           if (state is ExampleStateData) {
             ScaffoldMessenger.of(context).showSnackBar(
@@ -27,6 +37,15 @@ class BlocExample extends StatelessWidget {
           children: [
             // Ouve e retorna o estado
             BlocConsumer<ExampleBloc, ExampleState>(
+              buildWhen: (previous, current) {
+                if (previous is ExampleStateInitial &&
+                    current is ExampleStateData) {
+                  if (current.names.length > 3) {
+                    return true;
+                  }
+                }
+                return false;
+              },
               listener: (context, state) {
                 print('Estado alterado para ${state.runtimeType}');
               },
