@@ -5,7 +5,9 @@ abstract class ExampleEvent {}
 
 class ExampleFindNameEvent extends ExampleEvent {}
 
-class ExampleAddNameEvent extends ExampleEvent {}
+class ExampleAddNameEvent extends ExampleEvent {
+  //!  Implementar o INSERT de um nome da forma mais simples possível
+}
 
 class ExampleRemoveNameEvent extends ExampleEvent {
   final String name;
