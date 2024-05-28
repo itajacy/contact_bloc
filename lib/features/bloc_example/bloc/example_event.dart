@@ -7,6 +7,10 @@ class ExampleFindNameEvent extends ExampleEvent {}
 
 class ExampleAddNameEvent extends ExampleEvent {
   //!  Implementar o INSERT de um nome da forma mais simples possível
+  final String name;
+  ExampleAddNameEvent({
+    required this.name,
+  });
 }
 
 class ExampleRemoveNameEvent extends ExampleEvent {

@@ -11,7 +11,18 @@ class ExampleBloc extends Bloc<ExampleEvent, ExampleState> {
   ExampleBloc() : super(ExampleStateInitial()) {
     //!mapeando o evento
     on<ExampleFindNameEvent>(_findNames);
+    on<ExampleAddNameEvent>(_addName);
     on<ExampleRemoveNameEvent>(_removeName);
+  }
+
+  FutureOr<void> _addName(
+      ExampleAddNameEvent event, Emitter<ExampleState> emit) {
+    final stateExample = state;
+    if (stateExample is ExampleStateData) {
+      final names = [...stateExample.names];
+      names.add(event.name);
+      emit(ExampleStateData(names: names));
+    }
   }
 
   FutureOr<void> _removeName(

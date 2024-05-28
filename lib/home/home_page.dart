@@ -46,7 +46,7 @@ class HomePage extends StatelessWidget {
               ),
               TextButton(
                 onPressed: () {
-                  Navigator.of(context).pushNamed('***********');
+                  Navigator.of(context).pushNamed('/bloc/example/freezed');
                 },
                 child: const Text('Example Freezed'),
               ),
