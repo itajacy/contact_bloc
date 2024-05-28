@@ -20,7 +20,13 @@ class ExampleFreezedBloc
   }
 
   FutureOr<void> _addName(
-      _ExampleFreezedEventAddName event, Emitter<ExampleFreezedState> emit) {
+    _ExampleFreezedEventAddName event,
+    Emitter<ExampleFreezedState> emit,
+  ) async {
+    emit(ExampleFreezedState.showBanner(
+        message: 'Aguarde, Nome sendo inserido!!'));
+    await Future.delayed(const Duration(seconds: 2));
+
     final names = state.maybeWhen(
       data: (names) => names,
       orElse: () => const <String>[],
