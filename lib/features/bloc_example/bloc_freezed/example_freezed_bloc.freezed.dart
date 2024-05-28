@@ -19,18 +19,21 @@ mixin _$ExampleFreezedState {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
+    required TResult Function() loading,
     required TResult Function(List<String> names) data,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
+    TResult? Function()? loading,
     TResult? Function(List<String> names)? data,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
+    TResult Function()? loading,
     TResult Function(List<String> names)? data,
     required TResult orElse(),
   }) =>
@@ -38,18 +41,21 @@ mixin _$ExampleFreezedState {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_ExampleFreezedStateInitial value) initial,
+    required TResult Function(_ExampleFreezedStateLoading value) loading,
     required TResult Function(_ExampleFreezedStateData value) data,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_ExampleFreezedStateInitial value)? initial,
+    TResult? Function(_ExampleFreezedStateLoading value)? loading,
     TResult? Function(_ExampleFreezedStateData value)? data,
   }) =>
       throw _privateConstructorUsedError;
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_ExampleFreezedStateInitial value)? initial,
+    TResult Function(_ExampleFreezedStateLoading value)? loading,
     TResult Function(_ExampleFreezedStateData value)? data,
     required TResult orElse(),
   }) =>
@@ -117,6 +123,7 @@ class _$_ExampleFreezedStateInitial implements _ExampleFreezedStateInitial {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
+    required TResult Function() loading,
     required TResult Function(List<String> names) data,
   }) {
     return initial();
@@ -126,6 +133,7 @@ class _$_ExampleFreezedStateInitial implements _ExampleFreezedStateInitial {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
+    TResult? Function()? loading,
     TResult? Function(List<String> names)? data,
   }) {
     return initial?.call();
@@ -135,6 +143,7 @@ class _$_ExampleFreezedStateInitial implements _ExampleFreezedStateInitial {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
+    TResult Function()? loading,
     TResult Function(List<String> names)? data,
     required TResult orElse(),
   }) {
@@ -148,6 +157,7 @@ class _$_ExampleFreezedStateInitial implements _ExampleFreezedStateInitial {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_ExampleFreezedStateInitial value) initial,
+    required TResult Function(_ExampleFreezedStateLoading value) loading,
     required TResult Function(_ExampleFreezedStateData value) data,
   }) {
     return initial(this);
@@ -157,6 +167,7 @@ class _$_ExampleFreezedStateInitial implements _ExampleFreezedStateInitial {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_ExampleFreezedStateInitial value)? initial,
+    TResult? Function(_ExampleFreezedStateLoading value)? loading,
     TResult? Function(_ExampleFreezedStateData value)? data,
   }) {
     return initial?.call(this);
@@ -166,6 +177,7 @@ class _$_ExampleFreezedStateInitial implements _ExampleFreezedStateInitial {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_ExampleFreezedStateInitial value)? initial,
+    TResult Function(_ExampleFreezedStateLoading value)? loading,
     TResult Function(_ExampleFreezedStateData value)? data,
     required TResult orElse(),
   }) {
@@ -178,6 +190,118 @@ class _$_ExampleFreezedStateInitial implements _ExampleFreezedStateInitial {
 
 abstract class _ExampleFreezedStateInitial implements ExampleFreezedState {
   factory _ExampleFreezedStateInitial() = _$_ExampleFreezedStateInitial;
+}
+
+/// @nodoc
+abstract class _$$_ExampleFreezedStateLoadingCopyWith<$Res> {
+  factory _$$_ExampleFreezedStateLoadingCopyWith(
+          _$_ExampleFreezedStateLoading value,
+          $Res Function(_$_ExampleFreezedStateLoading) then) =
+      __$$_ExampleFreezedStateLoadingCopyWithImpl<$Res>;
+}
+
+/// @nodoc
+class __$$_ExampleFreezedStateLoadingCopyWithImpl<$Res>
+    extends _$ExampleFreezedStateCopyWithImpl<$Res,
+        _$_ExampleFreezedStateLoading>
+    implements _$$_ExampleFreezedStateLoadingCopyWith<$Res> {
+  __$$_ExampleFreezedStateLoadingCopyWithImpl(
+      _$_ExampleFreezedStateLoading _value,
+      $Res Function(_$_ExampleFreezedStateLoading) _then)
+      : super(_value, _then);
+}
+
+/// @nodoc
+
+class _$_ExampleFreezedStateLoading implements _ExampleFreezedStateLoading {
+  _$_ExampleFreezedStateLoading();
+
+  @override
+  String toString() {
+    return 'ExampleFreezedState.loading()';
+  }
+
+  @override
+  bool operator ==(dynamic other) {
+    return identical(this, other) ||
+        (other.runtimeType == runtimeType &&
+            other is _$_ExampleFreezedStateLoading);
+  }
+
+  @override
+  int get hashCode => runtimeType.hashCode;
+
+  @override
+  @optionalTypeArgs
+  TResult when<TResult extends Object?>({
+    required TResult Function() initial,
+    required TResult Function() loading,
+    required TResult Function(List<String> names) data,
+  }) {
+    return loading();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? whenOrNull<TResult extends Object?>({
+    TResult? Function()? initial,
+    TResult? Function()? loading,
+    TResult? Function(List<String> names)? data,
+  }) {
+    return loading?.call();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeWhen<TResult extends Object?>({
+    TResult Function()? initial,
+    TResult Function()? loading,
+    TResult Function(List<String> names)? data,
+    required TResult orElse(),
+  }) {
+    if (loading != null) {
+      return loading();
+    }
+    return orElse();
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult map<TResult extends Object?>({
+    required TResult Function(_ExampleFreezedStateInitial value) initial,
+    required TResult Function(_ExampleFreezedStateLoading value) loading,
+    required TResult Function(_ExampleFreezedStateData value) data,
+  }) {
+    return loading(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult? mapOrNull<TResult extends Object?>({
+    TResult? Function(_ExampleFreezedStateInitial value)? initial,
+    TResult? Function(_ExampleFreezedStateLoading value)? loading,
+    TResult? Function(_ExampleFreezedStateData value)? data,
+  }) {
+    return loading?.call(this);
+  }
+
+  @override
+  @optionalTypeArgs
+  TResult maybeMap<TResult extends Object?>({
+    TResult Function(_ExampleFreezedStateInitial value)? initial,
+    TResult Function(_ExampleFreezedStateLoading value)? loading,
+    TResult Function(_ExampleFreezedStateData value)? data,
+    required TResult orElse(),
+  }) {
+    if (loading != null) {
+      return loading(this);
+    }
+    return orElse();
+  }
+}
+
+abstract class _ExampleFreezedStateLoading implements ExampleFreezedState {
+  factory _ExampleFreezedStateLoading() = _$_ExampleFreezedStateLoading;
 }
 
 /// @nodoc
@@ -253,6 +377,7 @@ class _$_ExampleFreezedStateData implements _ExampleFreezedStateData {
   @optionalTypeArgs
   TResult when<TResult extends Object?>({
     required TResult Function() initial,
+    required TResult Function() loading,
     required TResult Function(List<String> names) data,
   }) {
     return data(names);
@@ -262,6 +387,7 @@ class _$_ExampleFreezedStateData implements _ExampleFreezedStateData {
   @optionalTypeArgs
   TResult? whenOrNull<TResult extends Object?>({
     TResult? Function()? initial,
+    TResult? Function()? loading,
     TResult? Function(List<String> names)? data,
   }) {
     return data?.call(names);
@@ -271,6 +397,7 @@ class _$_ExampleFreezedStateData implements _ExampleFreezedStateData {
   @optionalTypeArgs
   TResult maybeWhen<TResult extends Object?>({
     TResult Function()? initial,
+    TResult Function()? loading,
     TResult Function(List<String> names)? data,
     required TResult orElse(),
   }) {
@@ -284,6 +411,7 @@ class _$_ExampleFreezedStateData implements _ExampleFreezedStateData {
   @optionalTypeArgs
   TResult map<TResult extends Object?>({
     required TResult Function(_ExampleFreezedStateInitial value) initial,
+    required TResult Function(_ExampleFreezedStateLoading value) loading,
     required TResult Function(_ExampleFreezedStateData value) data,
   }) {
     return data(this);
@@ -293,6 +421,7 @@ class _$_ExampleFreezedStateData implements _ExampleFreezedStateData {
   @optionalTypeArgs
   TResult? mapOrNull<TResult extends Object?>({
     TResult? Function(_ExampleFreezedStateInitial value)? initial,
+    TResult? Function(_ExampleFreezedStateLoading value)? loading,
     TResult? Function(_ExampleFreezedStateData value)? data,
   }) {
     return data?.call(this);
@@ -302,6 +431,7 @@ class _$_ExampleFreezedStateData implements _ExampleFreezedStateData {
   @optionalTypeArgs
   TResult maybeMap<TResult extends Object?>({
     TResult Function(_ExampleFreezedStateInitial value)? initial,
+    TResult Function(_ExampleFreezedStateLoading value)? loading,
     TResult Function(_ExampleFreezedStateData value)? data,
     required TResult orElse(),
   }) {

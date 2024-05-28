@@ -13,6 +13,24 @@ class BlocFreezedExample extends StatelessWidget {
       ),
       body: Column(
         children: [
+          BlocSelector<ExampleFreezedBloc, ExampleFreezedState, bool>(
+            selector: (state) {
+              return state.maybeWhen(
+                loading: () => true,
+                orElse: () => false,
+              );
+            },
+            builder: (context, showLoader) {
+              if (showLoader) {
+                return const Expanded(
+                  child: Center(
+                    child: CircularProgressIndicator(),
+                  ),
+                );
+              }
+              return const SizedBox.shrink();
+            },
+          ),
           BlocSelector<ExampleFreezedBloc, ExampleFreezedState, List<String>>(
             selector: (state) {
               return state.maybeWhen(

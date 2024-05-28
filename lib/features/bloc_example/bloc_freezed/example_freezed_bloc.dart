@@ -49,6 +49,8 @@ class ExampleFreezedBloc
     _ExampleFreezedEventFindNames event,
     Emitter<ExampleFreezedState> emit,
   ) async {
+    emit(ExampleFreezedState.loading());
+
     await Future.delayed(Duration(seconds: 4));
     final names = [
       'Rodrigo',
