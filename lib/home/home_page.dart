@@ -58,7 +58,7 @@ class HomePage extends StatelessWidget {
             children: [
               TextButton(
                 onPressed: () {
-                  Navigator.of(context).pushNamed('************');
+                  Navigator.of(context).pushNamed('/contacts/list');
                 },
                 child: const Text('Contact'),
               ),
