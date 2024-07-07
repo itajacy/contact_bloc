@@ -1,4 +1,5 @@
 import 'dart:async';
+import 'dart:developer';
 
 import 'package:bloc/bloc.dart';
 import 'package:contact_bloc/models/contact_model.dart';
@@ -11,7 +12,7 @@ part 'contact_register_bloc.freezed.dart';
 
 class ContactRegisterBloc
     extends Bloc<ContactRegisterEvent, ContactRegisterState> {
-  ContactsRepository _contactsRepository;
+  final ContactsRepository _contactsRepository;
 
   ContactRegisterBloc({required ContactsRepository contactsRepository})
       : _contactsRepository = contactsRepository,
@@ -21,10 +22,24 @@ class ContactRegisterBloc
 
   Future<FutureOr<void>> _save(
       _Save event, Emitter<ContactRegisterState> emit) async {
-    final contactModel = ContactModel(
-      name: event.name,
-      email: event.email,
-    );
-    await _contactsRepository.create(contactModel);
+    try {
+      emit(const ContactRegisterState.loading());
+
+      await Future.delayed(Duration(seconds: 2));
+
+      final contactModel = ContactModel(
+        name: event.name,
+        email: event.email,
+      );
+
+      // throw Exception();
+      await _contactsRepository.create(contactModel);
+
+      emit(const ContactRegisterState.success());
+    } catch (e, s) {
+      log('Erro ao salvar um novo contato', error: e, stackTrace: s);
+      emit(const ContactRegisterState.error(
+          meessage: 'Erro ao salvar um novo contato'));
+    }
   }
 }
