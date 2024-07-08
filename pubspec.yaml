@@ -57,7 +57,12 @@ dev_dependencies:
   freezed: 2.2.0
   # build_runner: ^2.1.8
   build_runner: ^2.4.10
+  
+  bloc_test: ^9.0.3
 
+  test: ^1.20.2
+
+  mocktail: ^0.3.0
 
 
   # The "flutter_lints" package below contains a set of recommended lints to
@@ -66,6 +71,10 @@ dev_dependencies:
   # package. See that file for information about deactivating specific lint
   # rules and activating additional ones.
   flutter_lints: ^2.0.0
+
+# dependency_overrides: 
+#   test_api: 0.4.9
+
 
 # For information on the generic Dart part of this file, see the
 # following page: https://dart.dev/tools/pub/pubspec
